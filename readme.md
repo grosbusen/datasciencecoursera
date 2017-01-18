@@ -6,6 +6,7 @@ Here are the things that you can find in this repository
   2. TidyDataSet.txt: a tidy data set
   3. run_analysis.R: script that perform analysis and create the tidy data set
   4. readme.md, which is what uare reading now
+  
 #Code Walkthrough
 The first step you need to do is to install.packages like dplyr and tidyr as the script needs it, however for simplicity sake and compatibility issue, it is not in the script attached here, so please load all the require library on your own.
 Please also set up working directory at your own as each working directory is different
