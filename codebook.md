@@ -8,10 +8,10 @@ and every single combination of subject and activity is measured using accelerom
   2. Unzip the file and store it in the working directory
   3. Read data from train and test folder as well as features and activity tables
   4. Combine the data from train and test folder to form one data set
-  5. Extracts only the measurements on the mean and standard deviation for each measurement
-  6. Appropriately labels the data set with descriptive variable names
-  7. Uses descriptive activity names to name the activities in the data set
-  8. Creates a second, independent tidy data set with the average of each variable for each activity and each subject
+  5. Extracts only the measurements on the mean and standard deviation for each measurement by using grep and metacharacter to fish out all the mean and standard deviation
+  6. Appropriately labels the data set with descriptive variable names by changing the column name with the name provided from features.txt
+  7. Uses descriptive activity names to name the activities in the data set by merging the measurement data frame with the activity tables data frame
+  8. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. We are using aggregate function to summarize the data base on the subject and activity and mean to calculate the average
 
 #Subject Information
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years
@@ -29,7 +29,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 <br>The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. 
 <br>From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
-#Measurement Information
+#Measurement or Variable Information
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.  These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz.  Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
 
 Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
@@ -66,7 +66,6 @@ The set of variables that were estimated from these signals are the **_average_*
 variable name|max width|range|class
 ---|---|---|---
 ActivityDescription|18|LAYING/SITTING/STANDING/WALKING<br>/WALKING_DOWNSTAIRS/WALKING_UPSTAIRS|character
-ActivityID|1|1 / 6|numeric
 SubjectID|2| 1 / 30|numeric
 tBodyAcc-mean()-X|17|0.2215982 / 0.3014610|numeric
 tBodyAcc-mean()-Y|20|-0.040513953 / -0.001308288|numeric
