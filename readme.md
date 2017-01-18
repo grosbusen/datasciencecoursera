@@ -64,7 +64,8 @@ The following the walkthrough of the attached scripts
   ```
   5. Use grepl to extract the mean and standard deviation measurement from all the measurements. In this case, mean measurement like MeanFreq and mean related angle are included in this version.
   Just a reminder, that there is no right or wrong to which set of mean that can only be extracted in this data frame.
-  6. The value return from the grepl is the indices of all measurement that have mean and standard deviation. Assign a new variable base on the indices of measurement of mean and standard deviation. point 5 and 6 share the same snippet of code
+  6. The value return from the grepl is the indices of all measurement that have mean and standard deviation. Assign a new variable base on the indices of measurement of mean and standard deviation. point 5 and 6 share the same snippet of code.
+  
   ```R
   #POINT NO 2
   #Extracts only the measurements on the mean and standard deviation for each measurement.
@@ -77,12 +78,14 @@ The following the walkthrough of the attached scripts
                        grepl("std",features1$V2) 
   ```
   7. Apply a appropriate labels to the data set measurement with descriptive variable names from features data frame. 
+  
   ```R
   #POINT NO 4
   #Appropriately labels the data set with descriptive variable names.
   names(mydf_mean_std) <- features2$V2  
   ```
   8. Assign descriptive activity names by merging the data set with activities data frame. This steps add a new column, ActivityDescription to accompany ActivityID. Remove the ActivityID using select()
+  
   ```R
   #POINT NO 3
   #Uses descriptive activity names to name the activities in the data set
