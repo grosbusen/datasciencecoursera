@@ -1,6 +1,7 @@
 variable name|max width|range|class
 ---|---|---|---
-ActivityDescription|18|LAYING/SITTING/STANDING/WALKING/WALKING_DOWNSTAIRS/WALKING_UPSTAIRS|character
+ActivityDescription|18|LAYING/SITTING/STANDING/WALKING
+/WALKING_DOWNSTAIRS/WALKING_UPSTAIRS|character
 ActivityID|1|1 / 6|numeric
 SubjectID|2| 1 / 30|numeric
 tBodyAcc-mean()-X|17|0.2215982 / 0.3014610|numeric
