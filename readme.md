@@ -23,7 +23,7 @@ The following the walkthrough of the attached scripts
   unzip(zipfile="./data/Assignment.zip", exdir = "./data")  
   ```
   2. Read all the file from the train and test folder and assign a descriptive variable matching the file name for easy identification. reading the text files use read.table and stringsAsFactors is set to FALSE. 
-  ```
+  ```R
   #reading data from train folder
   x_train <- read.table("./data/UCI HAR Dataset/train/X_train.txt", stringsAsFactors = FALSE)
   y_train <- read.table("./data/UCI HAR Dataset/train/y_train.txt", stringsAsFactors = FALSE)
@@ -43,7 +43,7 @@ The following the walkthrough of the attached scripts
 
   ```
   3. Assign a descriptive column name for the subject data (SubjectID) and activity data(ActivityID)
-  ```
+  ```R
   #setting column name for y_test
   names(y_test) <- "ActivityID"
 
@@ -51,7 +51,7 @@ The following the walkthrough of the attached scripts
   names(subject_test) <- "SubjectID"   
   ```
   4. Combine all the data from test and train folder to a single data frame called mydf
-  ```
+  ```R
   #combine all data frame from train folder
   train <- cbind(x_train, y_train, subject_train)
 
@@ -65,7 +65,7 @@ The following the walkthrough of the attached scripts
   5. Use grepl to extract the mean and standard deviation measurement from all the measurements. In this case, mean measurement like MeanFreq and mean related angle are included in this version.
   Just a reminder, that there is no right or wrong to which set of mean that can only be extracted in this data frame.
   6. The value return from the grepl is the indices of all measurement that have mean and standard deviation. Assign a new variable base on the indices of measurement of mean and standard deviation. point 5 and 6 share the same snippet of code
-  ```
+  ```R
   #POINT NO 2
   #Extracts only the measurements on the mean and standard deviation for each measurement.
   #At this point, all related to mean will be extracted, like Mean Frequency, mean related to angle
@@ -77,13 +77,13 @@ The following the walkthrough of the attached scripts
                        grepl("std",features1$V2) 
   ```
   7. Apply a appropriate labels to the data set measurement with descriptive variable names from features data frame. 
-  ```
+  ```R
   #POINT NO 4
   #Appropriately labels the data set with descriptive variable names.
   names(mydf_mean_std) <- features2$V2  
   ```
   8. Assign descriptive activity names by merging the data set with activities data frame. This steps add a new column, ActivityDescription to accompany ActivityID. Remove the ActivityID using select()
-  ```
+  ```R
   #POINT NO 3
   #Uses descriptive activity names to name the activities in the data set
   #In this step, as the result of the merge there will be additional column
@@ -91,7 +91,7 @@ The following the walkthrough of the attached scripts
   mydf_desc_activity_name <- select(merge(mydf_mean_std, activity_table, by = "ActivityID", sort = FALSE), -ActivityID)  
   ```
   9. Using aggregate to have a summary base on each subject and activity and measure the average of every measurement in the data frame base on the subject and activity
-  ```
+  ```R
   #POINT NO 5
   #From the data set in step 4, creates a second, independent tidy data set with the average 
   #of each variable for each activity and each subject.
@@ -105,7 +105,7 @@ The following the walkthrough of the attached scripts
   tidySet <- aggregate(. ~ ActivityDescription + SubjectID, data = mydf_desc_activity_name, mean)  
   ```
   10.Use write table to create a second independent tidy data set churn out from step 9
-  ```
+  ```R
   write.table(tidySet, "./data/TidyDataSet.txt", sep = " ", row.names = FALSE, quote = FALSE)
   ```
 
