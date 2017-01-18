@@ -1,3 +1,11 @@
+#Tidy Data Set information
+the available [tidy data set](https://github.com/grosbusen/datasciencecoursera/blob/master/TidyDataSet.md) is a set consists of 30 subject, each subject did 6 activities 
+and every single combination or subject and activity is measured using accelerometers and gyroscopes from the Samsung Galaxy S smartphone.
+The obtained dataset is a collection of average of each measurement for each activity and each subject. 
+Here is the link of the [Raw data] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), taken from [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+
+# Tidy Set Variable and it's properties
 variable name|max width|range|class
 ---|---|---|---
 ActivityDescription|18|LAYING/SITTING/STANDING/WALKING<br>/WALKING_DOWNSTAIRS/WALKING_UPSTAIRS|character
