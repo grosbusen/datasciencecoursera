@@ -1,11 +1,65 @@
 #Tidy Data Set information
 the available [tidy data set](https://github.com/grosbusen/datasciencecoursera/blob/master/TidyDataSet.md) is a set consists of 30 subject, each subject did 6 activities 
-and every single combination or subject and activity is measured using accelerometers and gyroscopes from the Samsung Galaxy S smartphone.
-The obtained dataset is a collection of average of each measurement for each activity and each subject. 
-Here is the link of the [Raw data] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), taken from [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+and every single combination of subject and activity is measured using accelerometers and gyroscopes from the Samsung Galaxy S smartphone.
+<br>The calculated dataset is a collection of average of each measurement for each activity and each subject. Each measurement is either a mean or standard deviation of the measurement as in Raw Data
+<br>The raw data is taken from [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+<br>Here are the step taken from the raw data to form a new independent tidy data set:
+..1. Download the file fro the location provided
+..2. Unzip the file and store it in the working directory
+..3. Read data from train and test folder as well as features.txt and acitivity tables
+..4. Combine the data from train and test folder to form one data set
+..5. Extracts only the measurements on the mean and standard deviation for each measurement
+..6. Appropriately labels the data set with descriptive variable names
+..7. Uses descriptive activity names to name the activities in the data set
+..8. Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
+#Subject information
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years
 
-# Tidy Set Variable and it's properties
+#Activity Information
+WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
+#Experiment information
+<br>Each person performed six activities wearing a smartphone (Samsung Galaxy S II) on the waist. 
+<br>Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
+<br>The experiments have been video-recorded to label the data manually.  
+
+<br>The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). 
+<br>The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. 
+<br>The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. 
+<br>From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+#Measurement Information
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+- tBodyAcc-XYZ
+- tGravityAcc-XYZ
+- tBodyAccJerk-XYZ
+- tBodyGyro-XYZ
+- tBodyGyroJerk-XYZ
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAcc-XYZ
+- fBodyAccJerk-XYZ
+- fBodyGyro-XYZ
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are the **average** of the following: 
+- mean(): Mean value
+- std(): Standard deviation
+- meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+- angle(): Angle between to vectors, gravityMean, tBodyAccMean, tBodyAccJerkMean, tBodyGyroMean and tBodyGyroJerkMean
+
+# Tidy Set Variable and its properties
 variable name|max width|range|class
 ---|---|---|---
 ActivityDescription|18|LAYING/SITTING/STANDING/WALKING<br>/WALKING_DOWNSTAIRS/WALKING_UPSTAIRS|character
