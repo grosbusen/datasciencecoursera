@@ -4,9 +4,9 @@ and every single combination of subject and activity is measured using accelerom
 <br>The calculated dataset is a collection of average of each measurement for each activity and each subject. Each measurement is either a mean or standard deviation of the measurement as in Raw Data
 <br>The raw data is taken from [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 <br>Here are the step taken from the raw data to form a new independent tidy data set:
-  1. Download the file fro the location provided
+  1. Download the file from the location provided
   2. Unzip the file and store it in the working directory
-  3. Read data from train and test folder as well as features.txt and acitivity tables
+  3. Read data from train and test folder as well as features and activity tables
   4. Combine the data from train and test folder to form one data set
   5. Extracts only the measurements on the mean and standard deviation for each measurement
   6. Appropriately labels the data set with descriptive variable names
@@ -52,7 +52,7 @@ These signals were used to estimate variables of the feature vector for each pat
 - fBodyGyroMag
 - fBodyGyroJerkMag
 
-The set of variables that were estimated from these signals are the **average** of the following: 
+The set of variables that were estimated from these signals are the **_average_** of the following: 
 - mean(): Mean value
 - std(): Standard deviation
 - meanFreq(): Weighted average of the frequency components to obtain a mean frequency
